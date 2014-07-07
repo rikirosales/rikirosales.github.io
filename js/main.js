@@ -8,8 +8,8 @@ var loadMore = document.getElementById("loadMore");
 loadMore.addEventListener("click",loadMoreProject);
 
 init();
-loadMoreProject();
- function init() {
+//loadMoreProject();
+function init() {
     //if( document.querySelector('#username').value){
     //    userID = document.querySelector('#username').value
     //}
@@ -65,7 +65,7 @@ function projectIDInit(projectID){
             getTemplate = $('#projectID-template').html(),
             template    = Handlebars.compile(getTemplate),
             result      = template(userData);
-            $('div.modal-content').html(result);
+            $('div.modal-content').eq(0).html(result);
             //alert(userData)
             
             

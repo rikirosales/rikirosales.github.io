@@ -1000,10 +1000,11 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap requires jQuery'
   // MODAL DATA-API
   // ==============
 
-  $(document).on('click.bs.modal.data-api', '[data-toggle="modal"]', function (e) {
+  $(document).on('click.bs.modal.data-api', '[data-toggle="modal"]', '[data-toggle="modal3"]', function (e) {
     var $this   = $(this)
     var href    = $this.attr('href')
     pID   = $this.attr('alt')
+    console.log(pID)
     projectIDInit(pID);
      $('div.modal-content').html("");
     var $target = $($this.attr('data-target') || (href && href.replace(/.*(?=#[^\s]+$)/, ''))) //strip for ie7
@@ -1020,8 +1021,26 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap requires jQuery'
   })
 
   $(document)
-    .on('show.bs.modal', '.modal', function () { $(document.body).addClass('modal-open') })
-    .on('hidden.bs.modal', '.modal', function () { $(document.body).removeClass('modal-open') })
+    .on('show.bs.modal', '.modal', '.modal2', function () { $(document.body).addClass('modal-open') })
+    .on('hidden.bs.modal', '.modal', '.modal2', function () { $(document.body).removeClass('modal-open') })
+
+
+ //On the page portfolio
+ $(document).on('click.bs.modal.data-api', '[data-toggle="modal3"]', function (e) {
+    var $this   = $(this)
+    var href    = $this.attr('href')
+    var $target = $($this.attr('data-target') || (href && href.replace(/.*(?=#[^\s]+$)/, ''))) //strip for ie7
+    var option  = $target.data('bs.modal') ? 'toggle' : $.extend({ remote: !/#/.test(href) && href }, $target.data(), $this.data())
+    
+    if ($this.is('a')) e.preventDefault()
+
+    $target
+      .modal(option, this)
+      .one('hide', function () {
+        $this.is(':visible') && $this.focus()
+      })
+      
+  })   
 
 }(jQuery);
 
