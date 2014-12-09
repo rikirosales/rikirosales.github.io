@@ -169,7 +169,11 @@ header .intro-text .skills {
     margin-top: 0;
 }
 #loadMore img{display: none;
-margin-left: 10px;
+margin-left: -10px;
+margin-top: -10px;
+position: absolute;
+left: 50%;
+top:50%;
 }
 
 
@@ -255,7 +259,11 @@ section.success {
 }
 
 @media(max-width:767px) {
-    ul.logo-icons li{margin:20px 20px;display:block;}
+    .css {
+        margin: 10px 2px!important;
+        width: 50px!important;
+        height: 50px!important;
+    }
     section {
         padding: 75px 0;
     }
@@ -531,7 +539,136 @@ footer .footer-below {
     transform: rotate(90deg);
 }
 
+ 
+
 #profileImage{
     border-radius: 80px;
     border: 10px solid rgba(255, 255, 255, 0.5);
+    transition: all .5s;
+    transition-delay: .5s; 
+    opacity: 1;
+    transform:translate(0px,0px);
 }
+#profileImage.riki{
+    opacity: 0;
+    transform:translate(0px,44px);
+}
+.overlay{
+    background-color: #333;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 2000;
+    transition: all .8s;
+}
+
+.overlay.close{
+opacity: 0;
+
+ z-index: 1;
+
+}
+#portfolioMessage{
+    margin-bottom: 20px;
+}
+
+
+
+
+
+/*SVG effects*/
+.css{
+     height: 91px;
+    margin: 20px 2px 40px 2px;
+    width: 75px;
+     -webkit-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  -moz-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  -o-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+}
+/*SVG effects*/
+/*Sublime text loading*/
+@-moz-keyframes loading {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: 8.33333em;
+  }
+  100% {
+    left: 0;
+  }
+}
+@-webkit-keyframes loading {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: 8.33333em;
+  }
+  100% {
+    left: 0;
+  }
+}
+@keyframes loading {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: 8.33333em;
+  }
+  100% {
+    left: 0;
+  }
+}
+.st-loader {
+  width: 10em;
+  height: 2.5em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -1.25em 0 0 -5em;
+  box-sizing: border-box;
+}
+
+.st-loader:before,
+.st-loader:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1.25em;
+  box-sizing: border-box;
+  border: 0.25em solid #f80;
+}
+
+.st-loader:before {
+  left: -0.76923em;
+  border-right: 0;
+}
+
+.st-loader:after {
+  right: -0.76923em;
+  border-left: 0;
+}
+
+.st-loader .equal {
+  display: block;
+  position: absolute;
+  top: 50%;
+  margin-top: -0.5em;
+  left: 4.16667em;
+  height: 1em;
+  width: 1.66667em;
+  border: 0.25em solid #f80;
+  box-sizing: border-box;
+  border-width: 0.25em 0;
+  -moz-animation: loading 1.5s infinite ease-in-out;
+  -webkit-animation: loading 1.5s infinite ease-in-out;
+  animation: loading 1.5s infinite ease-in-out;
+}
+
+/*Sublime text loading*/
