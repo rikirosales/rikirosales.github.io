@@ -7,6 +7,50 @@ var userID  = 'rikirosales';
 
 init();
 loadMoreProject();
+function addScrollMagic() {
+    // Init Controller
+    var scrollMagicController = new ScrollMagic();
+    // Create Animation for 0.5s
+    
+
+    var tween = new TimelineMax({yoyo: true})
+    .add(TweenMax.to('h2.portfolioAnimate', .5, {opacity:1,marginTop: 0}))
+    .add(TweenMax.to('.star-primary.portfolioAnimate', .5, {opacity:1, left:0}))
+    .add(TweenMax.to('#portfolioMessage', .5, {opacity:1,bottom:10}))
+    .add(TweenMax.to('.portfolio-item', .5, {opacity:1,bottom:10}))
+    ;
+
+
+
+
+    // Portfolio
+    var scene = new ScrollScene({
+        triggerElement: '#portfolio',
+        offset: 100 /* offset the trigger 150px below #scene's top */
+    })
+    .setTween(tween)
+    .addTo(scrollMagicController);
+
+
+    //About
+    var tween = TweenMax.to('.aboutAnimate', 0.5, {
+        opacity: 1,
+    });
+
+    // Create the Scene and trigger when visible with ScrollMagic
+    var scene = new ScrollScene({
+        triggerElement: '#about',
+        offset: 10 /* offset the trigger 150px below #scene's top */
+    })
+    .setTween(tween)
+    .addTo(scrollMagicController);
+
+
+
+     scene.addIndicators();
+
+};
+
 function init() {
     //if( document.querySelector('#username').value){
     //    userID = document.querySelector('#username').value
@@ -87,7 +131,8 @@ function loadMoreProject(event){
         setTimeout( function(){
             $("#loadMore ").hide();
             $(".overlay").addClass("close");
-            $("img#profileImage").removeClass("riki");     
+            $("img#profileImage").removeClass("riki"); 
+            addScrollMagic();    
         }, 2000 );
        
 
