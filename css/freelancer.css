@@ -255,7 +255,7 @@ section h2 {
 section.success {
     color: #fff;
      background: url("../img/bg3.jpg") no-repeat fixed center center rgba(0, 0, 0, 0);
-     padding: 200px 0;
+     padding: 100px 0;
 }
 
 @media(max-width:767px) {
@@ -272,9 +272,7 @@ section.success {
         padding-top: 75px;
     }
     section.success {
-    color: #fff;
      background: url("../img/bg3.jpg") no-repeat scroll center center rgba(0, 0, 0, 0);
-     padding: 200px 0;
     }
 }
 
@@ -341,6 +339,7 @@ section.success {
     font-size: 20px;
     color: #fff;
     background: 0 0;
+    margin-right: 10px;
     transition: all .3s ease-in-out;
 }
 
@@ -351,6 +350,7 @@ section.success {
     border: solid 2px #fff;
     color: #18bc9c;
     background: #fff;
+
 }
 .green{
     border: 1px solid #28c3ab;
@@ -570,12 +570,43 @@ opacity: 0;
  z-index: 1;
 
 }
+
 #portfolioMessage{
     margin-bottom: 20px;
+    
 }
 
 
+.footerSVG{
+    width: 116px;
+    height: 116px;
+}
+/* Animatged properties for scrollMagicJS*/
+.portfolio-item{
+    opacity:0;
 
+}
+h2.portfolioAnimate{
+    margin-top: -100px;
+}
+.portfolioAnimate,.aboutAnimate{
+    opacity: 0;
+}
+
+h3.aboutAnimate{
+    margin-top: 158px;
+}
+#aboutContent{
+    opacity: 0;
+    margin-top: 90px;
+}
+.aboutBorder{
+    opacity: 0;
+}
+ul.logo-icons.about li{
+    opacity: 0;
+}
+/* Animatged properties for scrollMagicJS*/
 
 
 /*SVG effects*/

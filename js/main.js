@@ -7,6 +7,59 @@ var userID  = 'rikirosales';
 
 init();
 loadMoreProject();
+function addScrollMagic() {
+    // Init Controller
+    var scrollMagicController = new ScrollMagic();
+    // Create Animation for 0.5s
+    
+
+    var tween = new TimelineMax({yoyo: true})
+    .add(TweenMax.to('h2.portfolioAnimate', .3, {opacity:1,marginTop: 0}))
+    .add(TweenMax.to('.star-primary.portfolioAnimate', .3, {opacity:1, left:0}))
+    .add(TweenMax.to('#portfolioMessage', .2, {opacity:1,bottom:10}))
+    .add(TweenMax.to('.portfolio-item', .2, {opacity:1,bottom:10}))
+    ;
+
+
+
+
+    // Portfolio
+    var scene = new ScrollScene({
+        triggerElement: '#portfolio',
+        offset: 100 /* offset the trigger 150px below #scene's top */
+    })
+    .setTween(tween)
+    .addTo(scrollMagicController);
+
+
+    //About
+    var tween2 = new TimelineMax({yoyo: true})
+    .add(TweenMax.to('h2.aboutAnimate', .2, {opacity:1,marginTop: 0}))
+    .add(TweenMax.to('.aboutBorder', .2, {opacity:1,marginTop: 0}))
+    .add(TweenMax.to('#aboutContent', .2, {opacity:1,marginTop: 0}))
+    ;
+
+
+
+    // Create the Scene and trigger when visible with ScrollMagic
+    var scene = new ScrollScene({
+        triggerElement: '#about',
+        offset: 200 /* offset the trigger 150px below #scene's top */
+    })
+    .setTween(tween2)
+    .addTo(scrollMagicController);
+
+
+
+     scene.addIndicators();
+
+};
+
+function toolsClick(e){
+    TweenMax.to('h3.aboutAnimate', .8, {opacity:1,marginTop: 118});
+    TweenMax.to('ul.logo-icons.about li', .8, {opacity:1,delay:.6});
+    e.preventDefault();
+}
 function init() {
     //if( document.querySelector('#username').value){
     //    userID = document.querySelector('#username').value
@@ -87,7 +140,10 @@ function loadMoreProject(event){
         setTimeout( function(){
             $("#loadMore ").hide();
             $(".overlay").addClass("close");
-            $("img#profileImage").removeClass("riki");     
+            $("img#profileImage").removeClass("riki"); 
+            addScrollMagic();    
+            
+             setTimeout( function(){$(".overlay").remove();},2000);
         }, 2000 );
        
 
