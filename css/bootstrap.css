@@ -5691,6 +5691,10 @@ button.close {
   td.visible-xs {
     display: table-cell !important;
   }
+  .row {
+    margin-left: 0px;
+    margin-right: 0px;
+}
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .visible-sm {
