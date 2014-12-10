@@ -4,11 +4,9 @@ if(isiPad){$("section.success").css("background-attachment","scroll")}
 var apiKey  = 'NGCVFuJ8w4IWMyLeaGGyg2X01orRKdq1';
 var userID  = 'rikirosales';
 
-var loadMore = document.getElementById("loadMore");
-loadMore.addEventListener("click",loadMoreProject);
 
 init();
-//loadMoreProject();
+loadMoreProject();
 function init() {
     //if( document.querySelector('#username').value){
     //    userID = document.querySelector('#username').value
@@ -76,6 +74,7 @@ function projectIDInit(projectID){
 function loadMoreProject(event){
     var behanceProjectsAPI = 'http://www.behance.net/v2/users/'+ userID +'/projects?callback=?&api_key='+ apiKey;
     $("#loadMore img").show();
+    $(".overlay").show();
     $.getJSON(behanceProjectsAPI, function(user) {
             
             var data = JSON.stringify(user);
@@ -85,7 +84,12 @@ function loadMoreProject(event){
             //console.log(result)
         })
      .done(function() {
-       $("#loadMore ").hide();
+        setTimeout( function(){
+            $("#loadMore ").hide();
+            $(".overlay").addClass("close");
+            $("img#profileImage").removeClass("riki");     
+        }, 2000 );
+       
 
      });
 
@@ -95,9 +99,19 @@ function loadMoreProject(event){
         template    = Handlebars.compile(getTemplate),
         result      = template(userData);
         $('#projects').html(result);
+
+         $("#projects").owlCarousel({
+           //singleItem:true,
+           items:3,
+           itemsScaleUp:true,
+           responsive:true,
+           lazyLoad:true,
+           navigation : true
+
+         });
         //$(".img-responsive").addClass("imgAnimation")
     };
-    event.preventDefault();
+
 }    
         
 
