@@ -44,11 +44,8 @@ function addScrollMagic() {
     // Create the Scene and trigger when visible with ScrollMagic
     var scene = new ScrollScene({
         triggerElement: '#about',
-<<<<<<< HEAD
-        offset: 200 /* offset the trigger 150px below #scene's top */
-=======
+
         offset: 150 /* offset the trigger 150px below #scene's top */
->>>>>>> 486e4cf73e3652f7e3d6a539b2a804189397a79c
     })
     .setTween(tween2)
     .addTo(scrollMagicController);
