@@ -161,6 +161,10 @@ header .intro-text .name {
     font-weight: 700;
 }
 
+header .intro-text .name,h2.portfolioAnimate,h2.aboutAnimate,.col-lg-12.text-center > h2 {
+    transition:all .5s ease-in-out;
+}
+
 header .intro-text .skills {
     font-size: 1.25em;
     font-weight: 300;
@@ -178,7 +182,6 @@ top:50%;
 
 
 
-
 @media(min-width:768px) {
     ul.banner-social-buttons>li:last-child {
         margin-bottom: 0;
@@ -187,10 +190,10 @@ top:50%;
         padding: 200px 0 100px;
     }
 
-    header .intro-text .name {
+    header .intro-text .name,h2.portfolioAnimate,h2.aboutAnimate,.col-lg-12.text-center > h2 {
         font-size: 5em;
     }
-
+    
     header .intro-text .skills {
         font-size: 1.75em;
     }
@@ -253,12 +256,17 @@ section h2 {
 }
 
 section.success {
-    color: #fff;
+  
      background: url("../img/bg3.jpg") no-repeat fixed center center rgba(0, 0, 0, 0);
      padding: 100px 0;
+<<<<<<< HEAD
+=======
+       color: #fff;
+>>>>>>> 486e4cf73e3652f7e3d6a539b2a804189397a79c
 }
-
+/*iPhone and smaller*/
 @media(max-width:767px) {
+   
     .css {
         margin: 10px 2px!important;
         width: 50px!important;
@@ -272,10 +280,23 @@ section.success {
         padding-top: 75px;
     }
     section.success {
+<<<<<<< HEAD
      background: url("../img/bg3.jpg") no-repeat scroll center center rgba(0, 0, 0, 0);
+=======
+     background: url("../img/bg3.jpg") no-repeat scroll top center rgba(0, 0, 0, 0)!important;
+     padding: 50px 0;
+    }
+    header .intro-text .name,h2.portfolioAnimate,h2.aboutAnimate,.col-lg-12.text-center > h2 {
+        font-size: 2.5em;
     }
 }
-
+/*tablet*/
+@media (min-width: 768px) and (max-width: 991px) {
+    header .intro-text .name,h2.portfolioAnimate,h2.aboutAnimate,.col-lg-12.text-center > h2 {
+        font-size: 4em;
+>>>>>>> 486e4cf73e3652f7e3d6a539b2a804189397a79c
+    }
+}
 #portfolio .portfolio-item {
     right: 0;
     margin: 0 0 15px;
@@ -584,6 +605,7 @@ opacity: 0;
 /* Animatged properties for scrollMagicJS*/
 .portfolio-item{
     opacity:0;
+<<<<<<< HEAD
 
 }
 h2.portfolioAnimate{
@@ -593,6 +615,17 @@ h2.portfolioAnimate{
     opacity: 0;
 }
 
+=======
+
+}
+h2.portfolioAnimate{
+    margin-top: -100px;
+}
+.portfolioAnimate,.aboutAnimate{
+    opacity: 0;
+}
+
+>>>>>>> 486e4cf73e3652f7e3d6a539b2a804189397a79c
 h3.aboutAnimate{
     margin-top: 158px;
 }
