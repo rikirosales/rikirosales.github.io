@@ -19,6 +19,7 @@
     
 
     <!-- Fonts -->
+
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 
@@ -30,7 +31,7 @@
 
 </head>
 
-<body id="page-top" class="index">
+<body id="page-top" class="index pageLoading">
 
     <!-- Navigation -->
 
@@ -93,17 +94,21 @@
                     <a href="FrederickARosales_CV.docx" class="btn btn-lg btn-outline">
                         <i class="fa fa-download"></i> Download my CV
                     </a>
+
                     <a onClick="toolsClick()" class="btn btn-lg btn-outline hidden-xs">
+
                         <i class="fa fa-download"></i> Some of the tools i used
                     </a>
         </div>
     </script>
     <script id="project-template" type="text/x-handlebars-template">
         {{#each projects }}
-        
-            <div class=" portfolio-item">
+         <div class=" portfolio-item">
                     <a href="#portfolioModal1" class="portfolio-link" alt="{{this.id}}"  data-toggle="modal">
+                    
+                      
                     <div class="caption">
+                        <p>{{this.name}}</p>
                         <div class="caption-content">
                             <i class="fa fa-search-plus fa-3x"></i>
                         </div>
@@ -112,6 +117,10 @@
                 </a>
             </div>
        {{/each}}
+
+
+
+       
     </script>  
 
     <script id="projectID-template" type="text/x-handlebars-template">
@@ -135,8 +144,6 @@
                                    
                                     <a href=""><strong>{{project.fields}}</strong></a> 
                                     
-                                    </li>
-                                    //<li>Date: <strong><a href="" id="datePublished"></a></strong>
                                     </li>
                                     
                                 </ul>
@@ -167,7 +174,7 @@
                     <h2 class="portfolioAnimate">Portfolio</h2>
                     <hr class="star-primary portfolioAnimate">
                     <div class="col-lg-8 col-lg-offset-2 text-center portfolioAnimate" id="portfolioMessage">
-                     <p>I'm Riki Rosalescurrently working as Senior Software Engineer for Interactive development at Emirates Airlines. Prior in working at Emirates, I've also worked for a multinational Agency which caters several international brands like Toyota, Lexus, Toys 'R' Us, Ikea, Marks & Spencer and Honda.</p>
+                     <p>I'm Riki currently working as Senior Software Engineer for Interactive development at Emirates Airlines. Prior in working at Emirates, I've also worked for a multinational Agency which caters several international brands like Toyota, Lexus, Toys 'R' Us, Ikea, Marks & Spencer and Honda.</p>
                     </div>
                 </div>
             </div>
@@ -196,6 +203,7 @@
                 </div>
 
                 
+
                  <div class="col-lg-12 text-center hidden-xs">
                     <h3 class="aboutAnimate" >Tools that i used for every day work</h3>
                     

@@ -2,40 +2,11 @@
 var isiPad = navigator.userAgent.match(/iPad/i) != null;
 if(isiPad){$("section.success").css("background-attachment","scroll")}
 var apiKey  = 'NGCVFuJ8w4IWMyLeaGGyg2X01orRKdq1';
-var userID  = 'rikirosales';
-
-//http://www.behance.net/v2/users/rikirosales?callback=?&api_key=NGCVFuJ8w4IWMyLeaGGyg2X01orRKdq1
-//http://www.behance.net/v2/projects/475570?callback=?&api_key=NGCVFuJ8w4IWMyLeaGGyg2X01orRKdq1
-//http://www.behance.net/v2/users/rikirosales/projects?callback=?&api_key=NGCVFuJ8w4IWMyLeaGGyg2X01orRKdq1
-
-// Cache the Dom
-
-    dom = { 
-
-        window   : $(window),
-
-        document : $(document),
-
-        html     : $('html'),
-
-        body     : $('body')
-
-    }
-    dom.window.load(function(){
-
-        //Intro();
-        init();
-        loadMoreProject();
-
-        
-        //$('#page-preloader').fadeOut();
-
-    });
+var userID  = 'frederickrosales';
 
 
-
-
-
+init();
+loadMoreProject();
 function addScrollMagic() {
     // Init Controller
     var scrollMagicController = new ScrollMagic();
@@ -43,20 +14,13 @@ function addScrollMagic() {
     
 
     var tween = new TimelineMax({yoyo: true})
-    .add(TweenMax.to('h2.portfolioAnimate', .3, {opacity:1,marginTop: 0}), 0)
-    .add(TweenMax.to('.star-primary.portfolioAnimate', .3, {opacity:1, left:0}),0)
-    .add(TweenMax.to('#portfolioMessage', .3, {opacity:1,bottom:10}), "+=0.2")
-    .add(TweenMax.to('.portfolio-item', .5, {opacity:1,bottom:10}), "+=0.2")
+    .add(TweenMax.to('h2.portfolioAnimate', .3, {opacity:1,marginTop: 0}))
+    .add(TweenMax.to('.star-primary.portfolioAnimate', .3, {opacity:1, left:0}))
+    .add(TweenMax.to('#portfolioMessage', .2, {opacity:1,bottom:10}))
+    .add(TweenMax.to('.portfolio-item', .2, {opacity:1,bottom:10}))
     ;
-  /*   function getAnimation(){
-       // TweenMax.to('h2.portfolioAnimate', .3, {opacity:1,marginTop: 0});
-          TweenLite.set('h2.portfolioAnimate', {x:-30, y:300})
-    }
-    var tween = new TimelineMax();
-    tween.add(getAnimation(),.5);*/
-    
-    
-   
+
+
 
 
     // Portfolio
@@ -80,7 +44,6 @@ function addScrollMagic() {
     // Create the Scene and trigger when visible with ScrollMagic
     var scene = new ScrollScene({
         triggerElement: '#about',
-
         offset: 150 /* offset the trigger 150px below #scene's top */
     })
     .setTween(tween2)
@@ -104,18 +67,14 @@ function init() {
     //submitBtn.addEventListener("click",submitBtnClick);
     var behanceUserAPI = 'http://www.behance.net/v2/users/'+ userID +'?callback=?&api_key='+ apiKey;
     
-    projectIDInit(1)
-          $.getJSON("json/profile.json", function(user) {
-        //$.getJSON(behanceUserAPI, function(user) {
-            console.log(user)
+    projectIDInit(475570)
+        $.getJSON(behanceUserAPI, function(user) {
+            
             var data = JSON.stringify(user);
-
             sessionStorage.setItem('behanceUser', data);
             setUserTemplate();
             setAboutTemplate();
 
-        }).error(function(jqXhr, textStatus, error) {
-                alert("ERROR on profile:  " + textStatus + ", " + error);
         });
 
         function setUserTemplate() {
@@ -141,18 +100,17 @@ function init() {
             $('div#aboutContent').html(result);
         };
     };
+
+
 function projectIDInit(projectID){
-    //var behanceProjectIDAPI = 'http://www.behance.net/v2/projects/'+ projectID +'?callback=?&api_key='+ apiKey;   
-   
-    $.getJSON("json/projectItem"+projectID+".json", function(user) {
-   // $.getJSON(behanceProjectIDAPI, function(user) {
+    var behanceProjectIDAPI = 'http://www.behance.net/v2/projects/'+ projectID +'?callback=?&api_key='+ apiKey;   
+    $.getJSON(behanceProjectIDAPI, function(user) {
             
             var data = JSON.stringify(user);
            sessionStorage.setItem('behanceProjectID', data);
             setProjectIDTemplate();
-        }).error(function(jqXhr, textStatus, error) {
-                alert("ERROR in projectItem: " + textStatus + ", " + error);
         });
+
         function setProjectIDTemplate() {
             var userData    = JSON.parse(sessionStorage.getItem('behanceProjectID')),
             getTemplate = $('#projectID-template').html(),
@@ -164,12 +122,13 @@ function projectIDInit(projectID){
             
         };
 }
+
+
 function loadMoreProject(event){
     var behanceProjectsAPI = 'http://www.behance.net/v2/users/'+ userID +'/projects?callback=?&api_key='+ apiKey;
     $("#loadMore img").show();
     $(".overlay").show();
-    $.getJSON("json/projects.json", function(user) {
-    //$.getJSON(behanceProjectsAPI, function(user) {
+    $.getJSON(behanceProjectsAPI, function(user) {
             
             var data = JSON.stringify(user);
             sessionStorage.setItem('behanceProjects', data);
@@ -182,15 +141,12 @@ function loadMoreProject(event){
             $("#loadMore ").hide();
             $(".overlay").addClass("close");
             $("img#profileImage").removeClass("riki"); 
-
             addScrollMagic();    
-            $("body").removeClass("pageLoading");
-             setTimeout( function(){$(".overlay").remove();},1000);
+            
+             setTimeout( function(){$(".overlay").remove();},2000);
         }, 2000 );
        
 
-     }).error(function(jqXhr, textStatus, error) {
-                alert("ERROR in load more: " + textStatus + ", " + error);
      });
 
     function setProjectTemplate() {
@@ -203,9 +159,18 @@ function loadMoreProject(event){
          $("#projects").owlCarousel({
            //singleItem:true,
            items:3,
+           itemsScaleUp:true,
            responsive:true,
            lazyLoad:true,
            navigation : true
+
          });
+        //$(".img-responsive").addClass("imgAnimation")
     };
+
 }    
+        
+
+
+
+
