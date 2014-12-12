@@ -2,7 +2,7 @@
 var isiPad = navigator.userAgent.match(/iPad/i) != null;
 if(isiPad){$("section.success").css("background-attachment","scroll")}
 var apiKey  = 'NGCVFuJ8w4IWMyLeaGGyg2X01orRKdq1';
-var userID  = 'frederickrosales';
+var userID  = 'rikirosales';
 
 
 init();
@@ -141,6 +141,7 @@ function loadMoreProject(event){
             $("#loadMore ").hide();
             $(".overlay").addClass("close");
             $("img#profileImage").removeClass("riki"); 
+             $("body").removeClass("pageLoading");
             addScrollMagic();    
             
              setTimeout( function(){$(".overlay").remove();},2000);
