@@ -41,6 +41,27 @@
          "covers":{
             "404":"img/hondaAdvantage_tn.jpg"
          }
+      },
+      {
+         "id":7,
+         "name":"Emirates Executive",
+         "covers":{
+            "404":"img/emiratesExecutive_tn.jpg"
+         }
+      },
+      {
+         "id":8,
+         "name":"Marhaba services",
+         "covers":{
+            "404":"img/marhaba_tn.jpg"
+         }
+      },
+      {
+         "id":9,
+         "name":"Fisker Middle East",
+         "covers":{
+            "404":"img/fisker_tn.jpg"
+         }
       }
      
      

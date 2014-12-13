@@ -1,7 +1,7 @@
 {
    "project":{
       "id":2,
-      "name":"Toyota Choices",
+      "name":"fisker Middle East",
       "url":"http:\/\/www.behance.net\/gallery\/475570\/Toshiba-UAE-proposed-website",
       "fields":[
          "Art Direction",
@@ -18,7 +18,17 @@
          {
             "id":2636362,
             "type":"image",
-            "src":"img/toyotaChoices1.jpg",
+            "src":"img/fisker1.jpg",
+            "width":500,
+            "height":365,
+            "sizes":[
+
+            ]
+         },
+         {
+            "id":2636362,
+            "type":"image",
+            "src":"img/fisker2.jpg",
             "width":960,
             "height":700,
             "sizes":[
@@ -28,7 +38,7 @@
          {
             "id":2636362,
             "type":"image",
-            "src":"img/toyotaChoices2.jpg",
+            "src":"img/fisker3.jpg",
             "width":960,
             "height":700,
             "sizes":[
@@ -38,33 +48,14 @@
          {
             "id":2636362,
             "type":"image",
-            "src":"img/toyotaChoices3.jpg",
+            "src":"img/fisker4.jpg",
             "width":960,
-            "height":533,
-            "sizes":[
-
-            ]
-         },
-         {
-            "id":2636362,
-            "type":"image",
-            "src":"img/toyotaChoices4.jpg",
-            "width":960,
-            "height":533,
-            "sizes":[
-
-            ]
-         },
-          {
-            "id":2636362,
-            "type":"image",
-            "src":"img/toyotaChoices5.jpg",
-            "width":960,
-            "height":533,
+            "height":700,
             "sizes":[
 
             ]
          }
+
       ]
    },
    "http_code":200

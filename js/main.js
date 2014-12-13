@@ -9,7 +9,7 @@ var userID  = 'rikirosales';
 //http://www.behance.net/v2/users/rikirosales/projects?callback=?&api_key=NGCVFuJ8w4IWMyLeaGGyg2X01orRKdq1
 
 // Cache the Dom
-
+    window.scrollTo(0, 0);
     dom = { 
 
         window   : $(window),
