@@ -19,6 +19,7 @@
     
 
     <!-- Fonts -->
+
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 
@@ -30,7 +31,7 @@
 
 </head>
 
-<body id="page-top" class="index">
+<body id="page-top" class="index pageLoading">
 
     <!-- Navigation -->
 
@@ -102,10 +103,12 @@
     </script>
     <script id="project-template" type="text/x-handlebars-template">
         {{#each projects }}
-        
-            <div class=" portfolio-item">
+         <div class=" portfolio-item">
                     <a href="#portfolioModal1" class="portfolio-link" alt="{{this.id}}"  data-toggle="modal">
+                    
+                      
                     <div class="caption">
+                        <p>{{this.name}}</p>
                         <div class="caption-content">
                             <i class="fa fa-search-plus fa-3x"></i>
                         </div>
@@ -114,6 +117,10 @@
                 </a>
             </div>
        {{/each}}
+
+
+
+       
     </script>  
 
     <script id="projectID-template" type="text/x-handlebars-template">
@@ -137,8 +144,6 @@
                                    
                                     <a href=""><strong>{{project.fields}}</strong></a> 
                                     
-                                    </li>
-                                    //<li>Date: <strong><a href="" id="datePublished"></a></strong>
                                     </li>
                                     
                                 </ul>
