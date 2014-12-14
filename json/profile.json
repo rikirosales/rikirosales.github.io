@@ -1,0 +1,49 @@
+{
+   "user":{
+      "id":162107,
+      "first_name":"riki",
+      "last_name":"rosales",
+      "username":"rikirosales",
+      "city":"Dubai",
+      "state":"",
+      "country":"United Arab Emirates",
+      "location":"Dubai, United Arab Emirates",
+      "company":"Emirates Airline",
+      "occupation":"Senior Software Engineer - Interactive development",
+      "created_on":1270534832,
+      "url":"https:\/\/www.behance.net\/rikirosales",
+      "images":{
+         "50":"https:\/\/mir-cdn.behance.net\/v1\/rendition\/user\/50\/162107.53abfc0da47d0.jpg",
+         "115":"https:\/\/mir-cdn.behance.net\/v1\/rendition\/user\/115\/162107.53abfc0da47d0.jpg",
+         "138":"https://mir-cdn.behance.net/v1/rendition/user/138/10295957.548acbe02ace8.jpg"
+      },
+      "display_name":"riki rosales",
+      "fields":[
+         "Web Design",
+         "UI\/UX",
+         "Web Development"
+      ],
+      "has_default_image":0,
+      "twitter":"",
+      "links":[
+
+      ],
+      "sections":{
+         "Hi":"I am a Full stack developer and interactive designer from Dubai UAE with more than 8+ years experience in interactive development and digital marketing.\n",
+         "About":"I'm Riki currently working as Senior Software Engineer for Interactive development at Emirates Airlines. Prior in working at Emirates,  I've also  worked for a multinational Agency which caters  several international brands like Toyota, Lexus, Toys 'R' Us, Ikea, Marks & Spencer and Honda."
+      },
+      "website":"http:\/\/behance.net\/rikirosales",
+      "stats":{
+         "followers":37,
+         "following":9,
+         "appreciations":56,
+         "views":1231,
+         "team_members":0,
+         "comments":0
+      },
+      "social_links":[
+
+      ]
+   },
+   "http_code":200
+}
