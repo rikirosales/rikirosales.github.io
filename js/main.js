@@ -2,7 +2,38 @@
 var isiPad = navigator.userAgent.match(/iPad/i) != null;
 if(isiPad){$("section.success").css("background-attachment","scroll")}
 var apiKey  = 'NGCVFuJ8w4IWMyLeaGGyg2X01orRKdq1';
-var userID  = 'rikirosales';
+var userID  = 'frederickrosales';
+
+//http://www.behance.net/v2/users/rikirosales?callback=?&api_key=NGCVFuJ8w4IWMyLeaGGyg2X01orRKdq1
+//http://www.behance.net/v2/projects/475570?callback=?&api_key=NGCVFuJ8w4IWMyLeaGGyg2X01orRKdq1
+//http://www.behance.net/v2/users/rikirosales/projects?callback=?&api_key=NGCVFuJ8w4IWMyLeaGGyg2X01orRKdq1
+
+// Cache the Dom
+    window.scrollTo(0, 0);
+    dom = { 
+
+        window   : $(window),
+
+        document : $(document),
+
+        html     : $('html'),
+
+        body     : $('body')
+
+    }
+    dom.window.load(function(){
+
+        //Intro();
+        init();
+        loadMoreProject();
+
+        
+        //$('#page-preloader').fadeOut();
+
+    });
+
+
+
 
 //http://www.behance.net/v2/users/rikirosales?callback=?&api_key=NGCVFuJ8w4IWMyLeaGGyg2X01orRKdq1
 //http://www.behance.net/v2/projects/475570?callback=?&api_key=NGCVFuJ8w4IWMyLeaGGyg2X01orRKdq1
@@ -88,7 +119,7 @@ function addScrollMagic() {
 
 
 
-     scene.addIndicators();
+     //scene.addIndicators();
 
 };
 
