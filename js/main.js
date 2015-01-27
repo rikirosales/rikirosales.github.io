@@ -2,38 +2,7 @@
 var isiPad = navigator.userAgent.match(/iPad/i) != null;
 if(isiPad){$("section.success").css("background-attachment","scroll")}
 var apiKey  = 'NGCVFuJ8w4IWMyLeaGGyg2X01orRKdq1';
-var userID  = 'frederickrosales';
-
-//http://www.behance.net/v2/users/rikirosales?callback=?&api_key=NGCVFuJ8w4IWMyLeaGGyg2X01orRKdq1
-//http://www.behance.net/v2/projects/475570?callback=?&api_key=NGCVFuJ8w4IWMyLeaGGyg2X01orRKdq1
-//http://www.behance.net/v2/users/rikirosales/projects?callback=?&api_key=NGCVFuJ8w4IWMyLeaGGyg2X01orRKdq1
-
-// Cache the Dom
-    window.scrollTo(0, 0);
-    dom = { 
-
-        window   : $(window),
-
-        document : $(document),
-
-        html     : $('html'),
-
-        body     : $('body')
-
-    }
-    dom.window.load(function(){
-
-        //Intro();
-        init();
-        loadMoreProject();
-
-        
-        //$('#page-preloader').fadeOut();
-
-    });
-
-
-
+var userID  = 'rikirosales';
 
 //http://www.behance.net/v2/users/rikirosales?callback=?&api_key=NGCVFuJ8w4IWMyLeaGGyg2X01orRKdq1
 //http://www.behance.net/v2/projects/475570?callback=?&api_key=NGCVFuJ8w4IWMyLeaGGyg2X01orRKdq1
@@ -119,7 +88,6 @@ function addScrollMagic() {
 
 
 
-     //scene.addIndicators();
 
 };
 
@@ -154,12 +122,12 @@ function init() {
             return "rikis";
             });        
 
-	        var userData    = JSON.parse(sessionStorage.getItem('behanceUser')),
-	        getTemplate = $('#profile-template').html(),
-	        template    = Handlebars.compile(getTemplate),
-	        result      = template(userData);
+            var userData    = JSON.parse(sessionStorage.getItem('behanceUser')),
+            getTemplate = $('#profile-template').html(),
+            template    = Handlebars.compile(getTemplate),
+            result      = template(userData);
 
-	        $('div.header').html(result);
+            $('div.header').html(result);
             cbpAnimatedHeader();
             $("#copyright").html(userData.user.display_name)
 
