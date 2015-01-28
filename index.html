@@ -13,6 +13,7 @@
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="css/freelancer.css" rel="stylesheet" type="text/css">
+    <link href="css/component.css" rel="stylesheet" type="text/css">
     <link href="css/owl.carousel.css" rel="stylesheet" type="text/css">
     <link href="css/owl.theme.css" rel="stylesheet" type="text/css">
 
@@ -28,286 +29,254 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
+    
 
 </head>
 
 <body id="page-top" class="index pageLoading">
 
     <!-- Navigation -->
-
-    <script id="profile-template" type="text/x-handlebars-template">
-
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#page-top">{{ user.display_name}}</a>{{#noop}}{{/noop}}
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="#portfolio">Portfolio</a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="#about">About</a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
-            <!--navbar-collapse -->
-        </div>
-        <!-- container-fluid -->
-    </nav>
-    <header>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <img class="img-responsive riki" id="profileImage" src="{{user.images.[138]}}" alt="">
-                    <div class="intro-text">
-                        <span class="name">{{user.display_name}}</span>
-                        <div><hr class="star-light2"><hr class="star-light"><hr class="star-light2"></div>
-                        <span class="skills">{{user.sections.Hi}}</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    </script> 
-    <script id="about-template" type="text/x-handlebars-template">
-        <div class="col-lg-8 col-lg-offset-2 text-center">
-        <p>{{user.sections.About}}</p>
-        </div>
-        <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <a href="FrederickARosales_CV.docx" class="btn btn-lg btn-outline">
-                        <i class="fa fa-download"></i> Download my CV
-                    </a>
-
-                    <a onClick="toolsClick()" class="btn btn-lg btn-outline hidden-xs">
-
-                        <i class="fa fa-download"></i> Some of the tools i used
-                    </a>
-        </div>
-    </script>
-    <script id="project-template" type="text/x-handlebars-template">
-        {{#each projects }}
-         <div class=" portfolio-item">
-                    <a href="#portfolioModal1" class="portfolio-link" alt="{{this.id}}"  data-toggle="modal">
-                    
-                      
-                    <div class="caption">
-                        <p>{{this.name}}</p>
-                        <div class="caption-content">
-                            <i class="fa fa-search-plus fa-3x"></i>
-                        </div>
-                    </div>
-                    <img src="{{this.covers.[404]}}" class="img-responsive lazyOwl" width="400" heigth="313" alt="" />
-                </a>
-            </div>
-       {{/each}}
-
-
-
-       
-    </script>  
-
-    <script id="projectID-template" type="text/x-handlebars-template">
-        
-            
-                <div class="close-modal" data-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl">
-                        </div>
-                    </div>
-                </div>
+<p><button id="showMenu">Show Menu</button></p>
+<div id="perspective" class="perspective effect-airbnb">
+    <div class="perspective-container">
+        <div class="wrapper">
+            <script id="profile-template" type="text/x-handlebars-template">
+            <header id="page-top">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-10 col-lg-offset-1">
-                            <div class="modal-body">
-                                <h2>{{project.name}}</h2>
-                                <hr class="star-primary">
-                                <p>{{project.description}}</p>
-                                <ul class="list-inline item-details">
-                                    <li>Role: 
-                                   
-                                    <a href=""><strong>{{project.fields}}</strong></a> 
-                                    
-                                    </li>
-                                    
-                                </ul>
-                                {{#each project.modules }}
-                                     
-                                     {{#if this.sizes.max_1240}}
-                                         <img src="{{this.sizes.max_1240}}" class="img-responsive img-centered" alt=""><br/>
-                                      {{else}}
-                                          <img src="{{this.src}}" class="img-responsive img-centered" alt=""><br/>
-                                      {{/if}}
-                                {{/each}}
-                                
-                                
-                                <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        <div class="col-lg-12">
+                            <img class="img-responsive riki" id="profileImage" src="{{user.images.[138]}}" alt="">
+                            <div class="intro-text">
+                                <span class="name">{{user.display_name}}</span>
+
+                                <div><hr class="star-light2"><hr class="star-light"><hr class="star-light2"></div>
+                                <span class="skills">{{user.sections.Hi}}</span>
                             </div>
                         </div>
                     </div>
                 </div>
-            
-     
-    </script>      
-    <div class="header">
-    </div>  
-    <section id="portfolio">
-        <div class="">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="portfolioAnimate">Portfolio</h2>
-                    <hr class="star-primary portfolioAnimate">
-                    <div class="col-lg-8 col-lg-offset-2 text-center portfolioAnimate" id="portfolioMessage">
-                     <p>I'm Riki currently working as Senior Software Engineer for Interactive development at Emirates Airlines. Prior in working at Emirates, I've also worked for a multinational Agency which caters several international brands like Toyota, Lexus, Toys 'R' Us, Ikea, Marks & Spencer and Honda.</p>
+            </header>
+            </script> 
+            <script id="about-template" type="text/x-handlebars-template">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                <p>{{user.sections.About}}</p>
+                </div>
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                            <a href="FrederickARosales_CV.docx" class="btn btn-lg btn-outline">
+                                <i class="fa fa-download"></i> Download my CV
+                            </a>
+
+                            <a onClick="toolsClick()" class="btn btn-lg btn-outline hidden-xs">
+
+                                <i class="fa fa-download"></i> Some of the tools i used
+                            </a>
+                </div>
+            </script>
+            <script id="project-template" type="text/x-handlebars-template">
+                {{#each projects }}
+                 <div class=" portfolio-item">
+                            <a href="#portfolioModal1" class="portfolio-link" alt="{{this.id}}"  data-toggle="modal">
+                            
+                              
+                            <div class="caption">
+                                <p>{{this.name}}</p>
+                                <div class="caption-content">
+                                    <i class="fa fa-search-plus fa-3x"></i>
+                                </div>
+                            </div>
+                            <img src="{{this.covers.[404]}}" class="img-responsive lazyOwl" width="400" heigth="313" alt="" />
+                        </a>
+                    </div>
+               {{/each}}
+            </script>  
+
+            <script id="projectID-template" type="text/x-handlebars-template">
+                        <div class="close-modal" data-dismiss="modal">
+                            <div class="lr">
+                                <div class="rl">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-10 col-lg-offset-1">
+                                    <div class="modal-body">
+                                        <h2>{{project.name}}</h2>
+                                        <hr class="star-primary">
+                                        <p>{{project.description}}</p>
+                                        <ul class="list-inline item-details">
+                                            <li>Role: 
+                                           
+                                            <a href=""><strong>{{project.fields}}</strong></a> 
+                                            
+                                            </li>
+                                            
+                                        </ul>
+                                        {{#each project.modules }}
+                                             
+                                             {{#if this.sizes.max_1240}}
+                                                 <img src="{{this.sizes.max_1240}}" class="img-responsive img-centered" alt=""><br/>
+                                              {{else}}
+                                                  <img src="{{this.src}}" class="img-responsive img-centered" alt=""><br/>
+                                              {{/if}}
+                                        {{/each}}
+                                        
+                                        
+                                        <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+            </script>      
+            <div class="header">
+            </div>  
+            <section id="portfolio">
+                <div class="">
+                    <div class="row">
+                        <div class="col-lg-12 text-center">
+                            <h2 class="portfolioAnimate">Portfolio</h2>
+                            <hr class="star-primary portfolioAnimate">
+                            <div class="col-lg-8 col-lg-offset-2 text-center portfolioAnimate" id="portfolioMessage">
+                             <p>I'm Riki currently working as Senior Software Engineer for Interactive development at Emirates Airlines. Prior in working at Emirates, I've also worked for a multinational Agency which caters several international brands like Toyota, Lexus, Toys 'R' Us, Ikea, Marks & Spencer and Honda.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                       
+                    </div>
+                    
+
+                    <div class="row owl-carousel portfolioAnimate" id="projects">
+                    
                     </div>
                 </div>
-            </div>
-            <div class="row">
-               
-            </div>
-            
+            </section>
 
-            <div class="row owl-carousel portfolioAnimate" id="projects">
-            
-            </div>
-        </div>
-    </section>
+            <section class="success" id="about">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 text-center">
+                            <h2 class="aboutAnimate">About</h2>
+                            <div class="aboutBorder"><hr class="star-light2"><hr class="star-light"><hr class="star-light2"></div>
+                        </div>
+                    </div>
+                    <div class="row">
 
-    <section class="success" id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="aboutAnimate">About</h2>
-                    <div class="aboutBorder"><hr class="star-light2"><hr class="star-light"><hr class="star-light2"></div>
-                </div>
-            </div>
-            <div class="row">
+                        <div id="aboutContent">
+                        </div>
 
-                <div id="aboutContent">
-                </div>
+                        
 
-                
-
-                 <div class="col-lg-12 text-center hidden-xs">
-                    <h3 class="aboutAnimate" >Tools that i used for every day work</h3>
-                    
-                    
-                </div> 
-                <div class="col-lg-12 text-center hidden-xs">  
-                <ul class="list-inline logo-icons about text-center">
-                            <li><img src="img/svg/angular-color.svg" class="css" alt=""></li>
-                            <li><img src="img/svg/bootstrap-color.svg" class="css" alt=""></li>
-                            <li><img src="img/svg/css3-color.svg" class="css" alt=""></li>
-                            <li><img src="img/svg/grunt-color.svg" class="css" alt=""></li>
-                            <li><img src="img/svg/html5-color.svg" class="css" alt=""></li>
+                         <div class="col-lg-12 text-center hidden-xs">
+                            <h3 class="aboutAnimate" >Tools that i used for every day work</h3>
                             
-                            <li><img src="img/svg/sass-color.svg" class="css" alt=""></li>
-                            <li><img src="img/svg/sublime-color.svg" class="css" alt=""></li>
-                </ul>  
-                </div>
-            </div>
-        </div>
-    </section>
-
-     <section id="contact" class="container content-section text-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>Contact Me</h2>
-                    <hr class="star-primary">
-                </div>
-            </div>
-            <div class="row" >
-              <div class="col-lg-8 col-lg-offset-2">
-                     <p>Are you looking for a bad ass developer to join your team? or a designer maybe for your upcoming project? Feel free to contact me on one of the details below.</p>
-                    <p>frederick.rosales@gmail.com</p>
-                    <ul class="list-inline banner-social-buttons">
-                        <li><a href="https://twitter.com/rikriki" class="btn btn-outline green btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
-                        </li>
-                        <li><a href="https://github.com/rikriki" class="btn btn-outline green btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
-                        </li>
-                        <li><a href="http://ae.linkedin.com/pub/frederick-rosales/8/297/28a" class="btn btn-outline green btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
-                        </li>
-                    </ul>
-              </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="text-center">
-        <div class="footer-above">
-            <div class="container">
-                <div class="row">
-                    <div class="footer-col col-md-12">
-                        <h3>This web app is developed using these tools:</h3>
-                        <!--<div><hr class="star-light2"><hr class="star-light"><hr class="star-light2"></div> -->
-                        <div class="col-lg-12 text-center">  
-                        <ul class="list-inline logo-icons text-center">
-                            <li><img src="img/svg/behance-wh.svg" class="footerSVG" alt=""></li>
-                            <li><img src="img/svg/bootstrap-wh.svg" class="footerSVG" alt=""></li>
-                            <li><img src="img/svg/github-wh.svg" class="footerSVG" alt=""></li>
+                            
+                        </div> 
+                        <div class="col-lg-12 text-center hidden-xs">  
+                        <ul class="list-inline logo-icons about text-center">
+                                    <li><img src="img/svg/angular-color.svg" class="css" alt=""></li>
+                                    <li><img src="img/svg/bootstrap-color.svg" class="css" alt=""></li>
+                                    <li><img src="img/svg/css3-color.svg" class="css" alt=""></li>
+                                    <li><img src="img/svg/grunt-color.svg" class="css" alt=""></li>
+                                    <li><img src="img/svg/html5-color.svg" class="css" alt=""></li>
+                                    
+                                    <li><img src="img/svg/sass-color.svg" class="css" alt=""></li>
+                                    <li><img src="img/svg/sublime-color.svg" class="css" alt=""></li>
                         </ul>  
                         </div>
-                        <p>This Application run using Behance API for contents, Github for hosting and Bootstrap for the template. I created this experiment to see how rapid it is to develop a portfolio nowadays using the modern style of web development. My current stack for developing applications are Node.JS AngularJs and ExpressJs. Want to know more about how i work? Feel free to contact me with my <a href="#contact">details</a> above 
-                        <!--<form role="form" class="form-inline col-md-12 text-center">
-                        <input type="text" id="username" placeholder="Your Behance username " class="form-control col-sm-8">
-                        <button onclick="submitBtnClick();" class="btn btn-default col-sm-2" id="submitBtn" type="submit">Submit</button>
-                         </form>-->
-                        </p>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="footer-below">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        Copyright &copy; 2014 - <span id="copyright"></span>
+            </section>
+
+            <section id="contact" class="container content-section text-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 text-center">
+                            <h2>Contact Me</h2>
+                            <hr class="star-primary">
+                        </div>
+                    </div>
+                    <div class="row" >
+                      <div class="col-lg-8 col-lg-offset-2">
+                             <p>Are you looking for a bad ass developer to join your team? or a designer maybe for your upcoming project? Feel free to contact me on one of the details below.</p>
+                            <p>frederick.rosales@gmail.com</p>
+                            <ul class="list-inline banner-social-buttons">
+                                <li><a href="https://twitter.com/rikriki" class="btn btn-outline green btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                                </li>
+                                <li><a href="https://github.com/rikriki" class="btn btn-outline green btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                                </li>
+                                <li><a href="http://ae.linkedin.com/pub/frederick-rosales/8/297/28a" class="btn btn-outline green btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
+                                </li>
+                            </ul>
+                      </div>
                     </div>
                 </div>
+            </section>
+
+            <footer class="text-center">
+                <div class="footer-above">
+                    <div class="container">
+                        <div class="row">
+                            <div class="footer-col col-md-12">
+                                <h3>This web app is developed using these tools:</h3>
+                                <!--<div><hr class="star-light2"><hr class="star-light"><hr class="star-light2"></div> -->
+                                <div class="col-lg-12 text-center">  
+                                <ul class="list-inline logo-icons text-center">
+                                    <li><img src="img/svg/behance-wh.svg" class="footerSVG" alt=""></li>
+                                    <li><img src="img/svg/bootstrap-wh.svg" class="footerSVG" alt=""></li>
+                                    <li><img src="img/svg/github-wh.svg" class="footerSVG" alt=""></li>
+                                </ul>  
+                                </div>
+                                <p>This Application run using Behance API for contents, Github for hosting and Bootstrap for the template. I created this experiment to see how rapid it is to develop a portfolio nowadays using the modern style of web development. My current stack for developing applications are Node.JS AngularJs and ExpressJs. Want to know more about how i work? Feel free to contact me with my <a href="#contact">details</a> above 
+                                <!--<form role="form" class="form-inline col-md-12 text-center">
+                                <input type="text" id="username" placeholder="Your Behance username " class="form-control col-sm-8">
+                                <button onclick="submitBtnClick();" class="btn btn-default col-sm-2" id="submitBtn" type="submit">Submit</button>
+                                 </form>-->
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-below">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                Copyright &copy; 2014 - <span id="copyright"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+            <div class="scroll-top page-scroll visible-xs visble-sm">
+                <a class="btn btn-primary" href="#page-top">
+                    <i class="fa fa-chevron-up"></i>
+                </a>
             </div>
+
+           
+        </div><!-- wrapper -->
+    </div><!-- /container -->
+    <nav class="outer-nav left vertical">
+        <a href="#page-top" class="icon-home">Home</a>
+        <a href="#portfolio" class="icon-star">Portfolio</a>
+        <a href="#about" class="icon-news">About</a>
+        <a href="#contact" class="icon-upload">Contact</a>
+    </nav>
+</div><!-- /perspective -->
+<!-- Portfolio Modals -->
+<div class="portfolioContainer">
+    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+         <div class="modal-content">
         </div>
-    </footer>
-
-    <div class="scroll-top page-scroll visible-xs visble-sm">
-        <a class="btn btn-primary" href="#page-top">
-            <i class="fa fa-chevron-up"></i>
-        </a>
     </div>
+</div>  
 
-    <!-- Portfolio Modals -->
-    <div class="portfolioContainer">
-        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-content">
-            </div>
-        </div>
-    </div>  
-
-    <div class="overlay">
-        
-          <div id="loadMore" class="st-loader"><span class="equal"></span></div>   
-    </div>
-
-
-    
-    
-
+<div class="overlay">
+   <div id="loadMore" class="st-loader"><span class="equal"></span></div>   
+</div>   
+<!-- /Portfolio Modals -->
+    <script src="js/modernizr.custom.25376.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.14.2/TweenMax.min.js"></script>
     <script src="js/jquery-1.10.2.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.3.0/handlebars.min.js"></script>
