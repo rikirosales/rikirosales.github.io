@@ -138,7 +138,7 @@ var userID  = 'frederickrosales';
 
 function addScrollMagic() {
     // Init Controller
-    var scrollMagicController = new ScrollMagic();
+    var scrollMagicController = new ScrollMagic({globalSceneOptions: {duration: 0}});
     // Create Animation for 0.5s
     
 
@@ -146,8 +146,9 @@ function addScrollMagic() {
     .add(TweenMax.to('h2.portfolioAnimate', .3, {opacity:1,marginTop: 0}), 0)
     .add(TweenMax.to('.star-primary.portfolioAnimate', .3, {opacity:1, left:0}),0)
     .add(TweenMax.to('#portfolioMessage', .3, {opacity:1,bottom:10}), "+=0.2")
-    .add(TweenMax.to('.portfolio-item', .5, {opacity:1,bottom:10}), "+=0.2")
-    ;
+    .add(TweenMax.to('.portfolio-item', .5, {opacity:1,bottom:10}), "+=0.2");
+    
+  
   /*   function getAnimation(){
        // TweenMax.to('h2.portfolioAnimate', .3, {opacity:1,marginTop: 0});
           TweenLite.set('h2.portfolioAnimate', {x:-30, y:300})
@@ -165,6 +166,7 @@ function addScrollMagic() {
         offset: 100 /* offset the trigger 150px below #scene's top */
     })
     .setTween(tween)
+    .setClassToggle("#showMenu", "portfolio")
     .addTo(scrollMagicController);
 
 
@@ -184,8 +186,16 @@ function addScrollMagic() {
         offset: 150 /* offset the trigger 150px below #scene's top */
     })
     .setTween(tween2)
+    .setClassToggle("#showMenu", "about")
     .addTo(scrollMagicController);
 
+    var scene = new ScrollScene({
+        triggerElement: '#contact',
+
+        offset: 150 /* offset the trigger 150px below #scene's top */
+    })
+    .setClassToggle("#showMenu", "contact")
+    .addTo(scrollMagicController);
 
 
      //scene.addIndicators();

@@ -15,8 +15,33 @@ html, body, .perspective {
 }
 button#showMenu {
     position: fixed;
-    z-index: 1049;
-}   
+    transition: all 1s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
+    -webkit-transform: all 1s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
+     z-index: 1049;
+     border:none;
+     background: none;
+     left: 0;
+
+} 
+button#showMenu::before {
+     transition: all 1s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
+    -webkit-transform: all 1s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
+    font-family: 'typicons';
+    content: "\e600";
+    
+    font-family: 'typicons';
+    color: #fff;
+    font-size: 250%;
+}  
+button#showMenu.portfolio::before {
+    color: #000;
+}
+button#showMenu.about::before {
+    color: #fff;
+}
+button#showMenu.contact::before {
+    color: #28c3ab;
+}
 .perspective {
     background: #aaa;
     position: relative;
