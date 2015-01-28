@@ -1,3 +1,5 @@
+@charset 'UTF-8';
+ 
 @font-face {
     font-family: 'typicons';
     src:url('../fonts/typicons/typicons.eot');
@@ -22,16 +24,33 @@ button#showMenu {
      background: none;
      left: 0;
 
-} 
+
+
+
+}
+
+button.hide {
+ opacity: 0;
+    -webkit-transform: translateX(-150px);
+    transform: translateX(-150px);
+    -webkit-transition: -webkit-transform 0.4s, opacity 0.4s;
+    transition: transform 0.4s, opacity 0.4s;
+
+}
 button#showMenu::before {
      transition: all 1s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
     -webkit-transform: all 1s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
     font-family: 'typicons';
-    content: "\e600";
+    content: '\e116'; /* '' */
     
     font-family: 'typicons';
     color: #fff;
     font-size: 250%;
+     -webkit-transition: opacity .3s;
+    transition: opacity 1.3s;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    
 }  
 button#showMenu.portfolio::before {
     color: #000;
@@ -192,14 +211,11 @@ button#showMenu.contact::before {
     backface-visibility: hidden;
 }
 
-.icon-news::before { content: "\e600" }
-.icon-home::before { content: "\e601" }
-.icon-image::before { content: "\e602" }
-.icon-upload::before { content: "\e603" }
-.icon-star::before { content: "\e604" }
-.icon-mail::before { content: "\e605" }
-.icon-lock::before { content: "\e606" }
-.icon-chart-pie::before { content: "\e607" }
+
+.icon-home::before { content: "\e089" }
+.icon-star::before { content: "\e0bf"}
+.icon-news::before { content: "\e12c" }
+.icon-upload::before { content: "\e036"}
 
 /* Individual Effects */
 

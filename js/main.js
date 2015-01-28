@@ -80,7 +80,7 @@ var userID  = 'frederickrosales';
             // add modalview class
             classie.add( perspectiveWrapper, 'modalview' );
             // animate..
-            setTimeout( function() { classie.add( perspectiveWrapper, 'animate' ); }, 25 );
+            setTimeout( function() { classie.add( perspectiveWrapper, 'animate' );classie.add( showMenu, 'hide' ); }, 25 );
         });
 
         nav.forEach(function(el,i){
@@ -104,12 +104,19 @@ var userID  = 'frederickrosales';
                 }
 
                 classie.remove( perspectiveWrapper, 'animate' );
-               setTimeout( function() { window.scrollTo(0,$('#portfolio').offset().top)}, 500 );
+                 classie.remove( showMenu, 'hide' ); 
+                 console.log(ev.target.getAttribute('href'));
+                 
+                 setTimeout( function() { window.scrollTo(0,$(ev.target.getAttribute('href')).offset().top)}, 500 );
                 ev.preventDefault();
                 
             })
         })
         
+        function navigateTo(page){
+            
+                 
+        }
         container.addEventListener( clickevent, function( ev ) {
             if( classie.has( perspectiveWrapper, 'animate') ) {
                 var onEndTransFn = function( ev ) {
