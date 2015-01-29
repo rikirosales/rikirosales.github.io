@@ -1,0 +1,21 @@
+{
+  "name": "y",
+  "version": "0.0.1",
+  "description": "Grunt Task for my Portoflio",
+  "main": "y",
+  "scripts": {
+    "test": "echo \"no test command\""
+  },
+  "author": "riki",
+  "license": "mit",
+  "devDependencies": {
+    "grunt": "~0.4.4",
+    "grunt-contrib-jshint": "latest",
+    "grunt-contrib-uglify": "latest",
+    "jshint-stylish": "latest",
+    "grunt-contrib-less": "latest",
+    "grunt-contrib-cssmin": "latest",
+    "grunt-contrib-watch": "latest",
+    "grunt-contrib-jade": "latest"
+  }
+}
