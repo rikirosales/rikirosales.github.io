@@ -14,7 +14,7 @@ module.exports = function(grunt) {
       options: {
         reporter: require('jshint-stylish')
       },
-      all: [ 'js/main.js']
+      all: [ '../js/main.js']
     },
 
     uglify:{
@@ -23,12 +23,12 @@ module.exports = function(grunt) {
       },
       build:{
         files:{
-          'js/main.min.js':'js/main.js',
-          'js/bootstrap.min.js':'js/bootstrap.js',
-          'js/classie.min.js':'js/classie.js',
-          'js/freelancer.min.js':'js/freelancer.js',
-          'js/owl.carousel.min.js':'js/owl.carousel.js',
-          'js/jquery.min.js':'jquery-1.10.2.js'
+          '../js/main.min.js':'../js/main.js',
+          '../js/bootstrap.min.js':'../js/bootstrap.js',
+          '../js/classie.min.js':'../js/classie.js',
+          '../js/freelancer.min.js':'../js/freelancer.js',
+          '../js/owl.carousel.min.js':'../js/owl.carousel.js',
+          '../js/jquery.min.js':'../js/jquery-1.10.2.js'
         }
       }
     },
@@ -42,11 +42,11 @@ module.exports = function(grunt) {
       },
       build: {
         files: {
-           'css/bootstrap.min.css':'css/bootstrap.css',
-           'css/freelancer.min.css':'css/freelancer.css',
-           'css/component-min.css':'css/component.css',
-           'css/owl.carousel.min.css':'css/owl.carousel.css',
-           'css/owl.theme.min.css':'css/owl.theme.css'
+           '../css/bootstrap.min.css':'../css/bootstrap.css',
+           '../css/freelancer.min.css':'../css/freelancer.css',
+           '../css/component-min.css':'../css/component.css',
+           '../css/owl.carousel.min.css':'../css/owl.carousel.css',
+           '../css/owl.theme.min.css':'../css/owl.theme.css'
         }
       }
     },
