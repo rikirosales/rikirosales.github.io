@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Freelancer - A Free Start Bootstrap Theme</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/freelancer.css" rel="stylesheet" type="text/css">
+
+    <!-- Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+    <!-- IE8 support for HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top" class="index">
+
+    <!-- Navigation -->
+
+
+    <script src="js/jquery-1.10.2.js"></script>
+     <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.3.0/handlebars.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/cbpAnimatedHeader.js"></script>
+    <script src="js/freelancer.js"></script>
+  <script type="text/javascript" src="http://platform.linkedin.com/in.js">
+      api_key:    75p9sj28fvcv3f
+     onLoad:onLinkedInLoad
+      authorize: true
+     
+    </script>
+
+
+<script type="IN/MemberProfile" data-id="http://www.linkedin.com/in/reidhoffman" data-format="hover"></script>
+<script type="text/javascript" >
+    function onLinkedInLoad(){
+        IN.Event.on(IN, "auth", onLinkedInAuth);
+
+}
+function onLinkedInAuth(){
+    /*IN.API.PeopleSearch().params({"first-name":"Riki"}).result(function(result) { 
+         alert (result)
+    })*/ 
+
+    IN.API.Profile("me").fields(["firstName","headline"]).result(function(result) { 
+                                // alert (result)
+                            });   
+}
+function doMyThing(PeopleSearch)
+{
+    PeopleSearch.people
+}
+
+</script>
+   <script type="in/Login">
+Hello, <?js= firstName ?> <?js= lastName ?>.
+<br/>
+<p>Your position is <?js= headline ?></p>
+<img src='<?js=pictureUrl ?>' />
+
+
+
+
+</script>
+
+</body>
+
+</html>
+
