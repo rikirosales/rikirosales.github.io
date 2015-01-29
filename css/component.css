@@ -23,11 +23,7 @@ button#showMenu {
      border:none;
      background: none;
      left: 0;
-
-
-
-
-}
+ }
 
 button.hide {
  opacity: 0;
