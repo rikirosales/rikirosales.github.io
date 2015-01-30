@@ -302,7 +302,7 @@ function loadMoreProject(event){
             addScrollMagic();    
             $("body").removeClass("pageLoading");
              setTimeout( function(){$(".overlay").remove();},1000);
-              $('nav>a').eq(1).click();
+               window.scrollTo(0,$(window.location.hash).offset().top);
         }, 2000 );
        
 

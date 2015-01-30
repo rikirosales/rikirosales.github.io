@@ -56,11 +56,11 @@ module.exports = function(grunt) {
     // configure watch to auto update ------------------------------------------
     watch: {
       stylesheets: {
-        files: ['css/*.css'],
+        files: ['../css/*.css'],
         tasks: 'cssmin'
       },
       scripts: {
-        files: 'js/main.js',
+        files: '../js/main.js',
         tasks: ['jshint','uglify'] 
       }
     }
