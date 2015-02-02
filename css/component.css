@@ -67,11 +67,12 @@ button#showMenu.contact::before {
     min-height: 100%;
     position: relative;
     outline: 1px solid rgba(0,0,0,0);
-    z-index: 10;
     -webkit-transform: translateZ(0) translateX(0) rotateY(0deg); /* reset transforms (Chrome bug) */
     transform: translateZ(0) translateX(0) rotateY(0deg);
 }
-
+.perspective-container.hidden{
+    
+}
 .perspective-container::after {
     content: '';
     position: absolute;
